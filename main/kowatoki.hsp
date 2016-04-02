@@ -1,0 +1,789 @@
+title "壊される時の鍵　Ver 1.00"
+buffer 2
+picload "kyara.bmp"
+buffer 3
+picload "acmapall.bmp"
+sdim map,300
+mmload "coin05.wav",1
+mmload "shoot17.wav",2
+mmload "jump00.wav",3
+mmload "fall05.wav",4
+mmload "mizu10.wav",5
+mmload "push51_a.wav",6
+mmload "opening1.wav",7
+mmload "opening3.mid",8,1
+mmload "te-ma.wav",9
+
+
+*home
+	mmplay 8
+	screen 0,480,321
+	color 0,0,0
+	boxf 0,0,480,321
+	pos 50,25
+	gcopy 3,0,325,390,200
+	wait 50
+	color 255,255,255
+	pos 330,230
+	mes "Ver 1.00"
+	pos 50,300
+	mes "(c) Outlet Device            conect of Hero シリーズ"
+	pos 10,5
+	mes "夜中など、音量に気をつけて遊んでください"
+	wait 100
+	repeat
+	color 255,255,255
+	pos 180,250
+	mes "PUSH ENTER KEY!" : c+
+	stick a,32
+	if a=32 : break
+	wait 15
+	color 0,0,0
+	boxf 180,250,300,270 : 
+	stick a,32
+	if a=32 : break
+	wait 15
+	loop
+	mmstop
+	mmplay 6
+	wait 10
+	goto *start
+	stop
+
+
+
+
+
+*start
+color 255,255,255
+mex=40
+mey=0
+vy=0
+coin=0
+muki=0
+on stef gosub *map0,*map1,*map2,*map3,*map4,*map5,*map6,*map7,*map8,*map9,*map10,*map11,*map12,*map13,*map14,*map15,*map16,*map17,*map18,*map19,*map20,*endsta
+i=0
+repeat 10 
+	   can=cnt
+	repeat 15
+		code=peek (map,i)
+		i+
+		if code=':'{
+					mey=can*32+7
+					mex=cnt*32+3
+		}
+	loop
+loop
+gsel 0
+goto *main
+
+*map0
+map=	"101999901111111"
+map=map+"101000000000101"
+map=map+"101004444400001"
+map=map+"181002221000001"
+map=map+"101000001000f01"
+map=map+"10111110100a101"
+map=map+"1g00000010011e1"
+map=map+"1002000010001b1"
+map=map+"1102001717001c1"
+map=map+"111111110011111"
+return
+
+
+*map1
+map=	"100000000000001"
+map=map+"100001000000001"
+map=map+"100000000000001"
+map=map+"100100001001001"
+map=map+"100000001000001"
+map=map+"100001001000001"
+map=map+"1000000010000e1"
+map=map+"1001000010000b1"
+map=map+"1101000000000c1"
+map=map+"111111110011111"
+return
+
+*map2
+map=	"100000000000001"
+map=map+"100000000000001"
+map=map+"1000000aa000001"
+map=map+"100000000000001"
+map=map+"100000000000001"
+map=map+"100017000000001"
+map=map+"1000000000000e1"
+map=map+"1000000011000b1"
+map=map+"1000000000180c1"
+map=map+"117000000000011"
+return
+
+*map3
+map=	"100000000000001"
+map=map+"100000000000001"
+map=map+"100000000000001"
+map=map+"1000000000a0101"
+map=map+"1000007000000a1"
+map=map+"100000000700001"
+map=map+"1000700000010e1"
+map=map+"1000000000000b1"
+map=map+"1000000000000c1"
+map=map+"117000000000011"
+return
+
+*map4
+map=	"100000000001001"
+map=map+"100000000001001"
+map=map+"10001a1a1a01001"
+map=map+"100010000001001"
+map=map+"101010000001001"
+map=map+"100010000001001"
+map=map+"100010a1a1a10e1"
+map=map+"1007101111110b1"
+map=map+"1:00100000000c1"
+map=map+"110021111111111"
+return
+
+*map5
+map=	"191999999999991"
+map=map+"1000000000000:1"
+map=map+"100007000000011"
+map=map+"170000707007001"
+map=map+"100700000070001"
+map=map+"101000700000771"
+map=map+"1e1010100710001"
+map=map+"1b1111111111111"
+map=map+"1c0000000000000"
+map=map+"110101110010111"
+return
+
+*map6
+map=	"111111111111111"
+map=map+"1:0000100000101"
+map=map+"110011101101101"
+map=map+"100a00101000101"
+map=map+"1000a017100a101"
+map=map+"10a00a101000101"
+map=map+"100000101a0a1e1"
+map=map+"1000aa1710001b1"
+map=map+"10a0000010a00c1"
+map=map+"111111111111111"
+return
+
+*map7
+map=	"111111111111111"
+map=map+"1:1000100010001"
+map=map+"101010101010101"
+map=map+"101710171017101"
+map=map+"101010101010101"
+map=map+"101010101010101"
+map=map+"1010101010101e1"
+map=map+"1017101710171b1"
+map=map+"1000100010001c1"
+map=map+"111111111111111"
+return
+*map8
+map="100000000000000100000000000000100:0000000000e11120000000000c0000000000000010000030000000010000000000010700000000000210100000a0100001000111111100111000"
+return
+*map9
+map="1:111111111111110111110011111110000000000000110000000000000110000077000000010000800878788010000000000000e10007000000000b10010000000000c1111aaaaaaaaaa1"
+return
+*map10
+map=	"122222222222221"
+map=map+"1000000000000:1"
+map=map+"101111111111111"
+map=map+"101000000001001"
+map=map+"1010000000010e1"
+map=map+"1010000000010b1"
+map=map+"10000a0a0a010c1"
+map=map+"100001010100011"
+map=map+"100001010100001"
+map=map+"1010717171a1701"
+return
+
+*map11
+map="1:111900000300010000003000300010000000003000010000300000000010000000a00000010000030000000010000000003000e10003000000000b10000000000000c111100000000001"
+return
+
+*map12
+map=	"100000000000001"
+map=map+"100040000000001"
+map=map+"100010000000001"
+map=map+"100000000000001"
+map=map+"100000070000001"
+map=map+"100004000100ff1"
+map=map+"100000000000fe1"
+map=map+"100400004000fb1"
+map=map+"1:0000400000fc1"
+map=map+"11700a170001111"
+return
+
+*map13
+map=	"100111111111101"
+map=map+"100000000000001"
+map=map+"110040040004001"
+map=map+"10f4000004ff101"
+map=map+"100004047040141"
+map=map+"104fffffffff101"
+map=map+"1000400040001e1"
+map=map+"1000440000001b1"
+map=map+"10000004040:1c1"
+map=map+"117ffff0fff1111"
+return
+
+*map14
+map=	"100000000000001"
+map=map+"100000000000001"
+map=map+"10000000g000001"
+map=map+"10000g000000001"
+map=map+"100000010000001"
+map=map+"107000000000001"
+map=map+"1000070000000e1"
+map=map+"1001000000000b1"
+map=map+"1:00000000000c1"
+map=map+"111100000000111"
+return
+
+*map15
+map="1:111111041100010004090000100010000090000108010004000800100010000040070f0001000700040010001000000000017001000010000010a7100110770001fff11110000a70122c"
+return
+
+*map16
+map="000000000000989000000000000000098989898980000000000000000000000000000000000000000000000000:000000000007ad30000000000001b00000000000001ca7a7a717a7a7a12"
+return
+
+*map17
+map=	"100000000000001"
+map=map+"140010101000001"
+map=map+"111000001000001"
+map=map+"100000001100001"
+map=map+"100010014000001"
+map=map+"100400010000111"
+map=map+"1010000110001e1"
+map=map+"1000g00100g01b1"
+map=map+"1:0400410000fc1"
+map=map+"111100110001111"
+return
+
+*map18
+map=	"111000000111111"
+map=map+"1:1000000140401"
+map=map+"101000000141001"
+map=map+"101011a101710a1"
+map=map+"101710000141001"
+map=map+"1810100001410f1"
+map=map+"101010000101ae1"
+map=map+"100710a1a1710b1"
+map=map+"1000100000010c1"
+map=map+"111111111111111"
+return
+
+*map19
+map=	"199999911111111"
+map=map+"140000070000001"
+map=map+"1ffffff10011001"
+map=map+"100000001000101"
+map=map+"100000000f00141"
+map=map+"1000000000f01f1"
+map=map+"1000000aa0101e1"
+map=map+"104a000000001b1"
+map=map+"1:41000040001c1"
+map=map+"117170011107111"
+return
+
+*map20
+map=	"101111111000001"
+map=map+"140000000100101"
+map=map+"111111110010g41"
+map=map+"1888888800100g1"
+map=map+"100000001010001"
+map=map+"100000000010111"
+map=map+"1000000000141e1"
+map=map+"1000000000141b1"
+map=map+"1:0000000014fc1"
+map=map+"11117a7a7710111"
+return
+*endsta
+map="0:000000000000000111010010110000100011010101000111010110100100100010010101000111010010110000000000000000e00000000000000b00000000000000c111110111010101"
+return
+
+
+
+
+*maphyozi
+	color 255,255,255
+	boxf 0,0,480,321
+	gmode 2
+	   i=0
+	   repeat 10
+	   can=cnt
+		repeat 15
+		code=peek (map,i)
+		i+
+		if code='1':sis=0
+		if code='2':sis=1
+		if code='3':sis=2
+		if code='4':sis=3
+		if code='5':sis=4
+		if code='6':sis=5
+		if code='7':sis=6
+		if code='8':sis=7
+		if code='9':sis=8
+		if code='a':sis=9
+		if code='b':sis=10
+		if code='c':sis=11
+		if code='d':sis=12
+		if code='e':sis=13
+		if code='0':sis=14
+		if code='f':sis=15
+		if code=':':sis=14
+		if code='g':sis=14
+		pos cnt*32,can*32
+	   gcopy 3,sis*32,0,32,32
+		loop
+	   loop
+	   wait 1
+  return
+
+*kyara
+	  gmode 2
+	  if(vy<6) : vy+=1
+	  if(vy>5) : vy-=1
+	  vxl=2
+	  vxr=2
+	  jmf=0
+	  if(vy>=5)and(vy<=8) : vy=5
+	  gosub *brokatatteru
+	  stick key
+	  if(key&16) : if(jmf=1) : 	vy=-12 : mmplay 3
+	  houko=2
+	  stick key,5
+	  if(key&4) : mex+=vxl : houko=0
+	  if(key&1) : mex-=vxr : houko=1
+	  mey+=vy
+	  pos mex,mey
+	  gosub *ugoki
+	  return
+
+*brokatatteru
+	i=0
+	 repeat 10
+	   cay=cnt
+		repeat 15
+		code=peek (map,i)
+		if code='1'{
+					if(cay*32)<=(mey+28)and(cay*32+19)>=(mey+28){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=0 : jmf=1 ;ue
+					                                            if(cnt*32<=mex+13)and(cnt*32+32>=mex+13) : vy=0 : jmf=1
+					}
+					if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=2 ;sita
+															  if(cnt*32+2<=mex+15)and(cnt*32+32>=mex+15) : vy=2
+					}
+					if(cnt*32+4<=mex+20)and(cnt*32+18>=mex+20){
+															if(cay*32)<=(mey)and(cay*32+32)>=(mey) : vxl=0 ;hudari 
+															if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxl=0  
+					}
+					if(cnt*32+18<=mex-6)and(cnt*32+28>=mex-6){
+															  if(cay*32-3)<=(mey)and(cay*32+32)>=(mey) : vxr=0;migi
+															  if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxr=0
+					}
+					
+		  }
+		if code='2'{
+					if(cay*32)<=(mey+28)and(cay*32+19)>=(mey+28){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=0 : jmf=1 ;ue
+					                                            if(cnt*32<=mex+13)and(cnt*32+32>=mex+13) : vy=0 : jmf=1
+					}
+					if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=2 ;sita
+															  if(cnt*32+2<=mex+15)and(cnt*32+32>=mex+15) : vy=2
+					}
+					if(cnt*32+4<=mex+20)and(cnt*32+18>=mex+20){
+															if(cay*32)<=(mey)and(cay*32+32)>=(mey) : vxl=0 ;hudari 
+															if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxl=0  
+					}
+					if(cnt*32+18<=mex-6)and(cnt*32+28>=mex-6){
+															  if(cay*32-3)<=(mey)and(cay*32+32)>=(mey) : vxr=0;migi
+															  if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxr=0
+					}
+					
+		  }
+		if code='3'{
+					if(cay*32)<=(mey+28)and(cay*32+19)>=(mey+28){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=0 : jmf=1 ;ue
+					                                            if(cnt*32<=mex+13)and(cnt*32+32>=mex+13) : vy=0 : jmf=1
+					}
+					if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=2 ;sita
+															  if(cnt*32<=mex+15)and(cnt*32+32>=mex+15) : vy=2
+					}
+					if(cnt*32+4<=mex+20)and(cnt*32+18>=mex+20){
+															if(cay*32)<=(mey)and(cay*32+32)>=(mey) : vxl=0 ;hudari 
+															if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxl=0  
+					}
+					if(cnt*32+18<=mex-6)and(cnt*32+28>=mex-6){
+															  if(cay*32-3)<=(mey)and(cay*32+32)>=(mey) : vxr=0;migi
+															  if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxr=0
+					}
+					
+		  }
+		  if code='4'{
+					if(cay*32)<=(mey+16)and(cay*32+32)>=(mey+16){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : coinget=1
+																if(cnt*32<=mex+13)and(cnt*32+32>=mex+13) : coinget=1										
+					}
+		  }
+		  if(coinget=1){
+			  			mmplay 1
+						poke map,i,'0'
+						coin+
+						coinget=0
+		  }
+		 if code='f'{
+					if(cay*32)<=(mey+28)and(cay*32+19)>=(mey+28){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=0 : jmf=1 ;ue
+					                                            if(cnt*32<=mex+13)and(cnt*32+32>=mex+13) : vy=0 : jmf=1
+					}
+					if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=2 ;sita
+															  if(cnt*32+2<=mex+15)and(cnt*32+32>=mex+15) : vy=2
+					}
+					if(cnt*32+4<=mex+20)and(cnt*32+18>=mex+20){
+															if(cay*32)<=(mey)and(cay*32+32)>=(mey) : vxl=0 ;hudari 
+															if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxl=0  
+					}
+					if(cnt*32+18<=mex-6)and(cnt*32+28>=mex-6){
+															  if(cay*32-3)<=(mey)and(cay*32+32)>=(mey) : vxr=0;migi
+															  if(cay*32)<=(mey+22)and(cay*32+32)>=(mey+22) : vxr=0
+					}
+					if(coin>=5){
+								poke map,i,'0'
+					}
+					
+		  }
+		  if code='7'{
+					if(cay*32)<=(mey+28)and(cay*32+7)>=(mey+28){
+					                                            if(cnt*32<=mex+6)and(cnt*32+32>=mex+6) : vy=-18 : mmplay 2;ue
+					                                            if(cnt*32<=mex+9)and(cnt*32+32>=mex+9) : vy=-18 : mmplay 2
+					}
+		  }
+		  if code='8'{
+		  			  if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=16 : mmplay 2;sita
+															  if(cnt*32<=mex+15)and(cnt*32+32>=mex+15) : vy=16 : mmplay 2
+					 }
+		  }
+		  if code='a'{
+					if(cay*32+8)<=(mey+28)and(cay*32+16)>=(mey+28){
+					                                            if(cnt*32<=mex)and(cnt*32+32>=mex) : ore=1
+					                                            if(cnt*32<=mex+15)and(cnt*32+32>=mex+15) : ore=1
+					}
+		  }
+		  if code='9'{
+					  if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															        if(cnt*32<=mex)and(cnt*32+32>=mex) : ore=1
+															        if(cnt*32<=mex+15)and(cnt*32+32>=mex+15) : ore=1
+					  }
+		  }
+		  if code='c'{
+					  if(cay*32)<=(mey)and(cay*32+32)>=(mey){
+															 if(cnt*32<=mex)and(cnt*32+32>=mex) : ore=2;sita
+															 if(cnt*32<=mex+15)and(cnt*32+32>=mex+15) : ore=2
+					  }
+		  }
+		 if code='g'and(vy<0){
+					if(cay*32+17)<=(mey-3)and(cay*32+32)>=(mey-3){
+															  if(cnt*32<=mex)and(cnt*32+32>=mex) : vy=2 : kakusi=1 ;sita
+															  if(cnt*32+2<=mex+15)and(cnt*32+32>=mex+15) : vy=2 : kakusi=1
+					}
+					if(kakusi=1){
+								poke map,i,'1'
+								kakusi=0
+					}
+					
+		  }
+		  i+
+		loop
+	loop
+		return
+
+
+      
+
+*gameover
+	mmplay 5
+	color 0,0,0
+	boxf 0,0,480,321
+	pos 100,100
+	gcopy 3,15,650,280,50
+	color 255,255,255
+	ore=0
+	redraw 1
+	wait 300
+	dialog "もう一度やってみますか？\n（いいえを押すとスタッフロールです）",2,"残念！ゲームオーバー"
+	if(stat=6) : goto *start
+	goto *sutfflorl
+	stop
+
+*ugoki
+	if(key=5) : houko=2
+	if(houko=0){
+		if(moti>=22) : moti=0
+		if(moti>=15)and(moti<=21) : gcopy 2,5,36,15,28;migi1
+		if(moti>=8)and(moti<=14) : gcopy 2,30,36,15,28;migi2
+		if(moti>=0)and(moti<=7) : gcopy 2,53,36,15,28;migi3
+		muki=0
+	}
+	if(houko=1){
+				if(moti>=22) : moti=0
+				if(moti>=15)and(moti<=21) : gcopy 2,4,100,15,28;hidarimuki
+				if(moti>=8)and(moti<=14) : gcopy 2,28,100,15,28;hidarimannnaka
+				if(moti>=0)and(moti<=7) : gcopy 2,52,100,15,28;hidarisaigo
+
+				muki=1
+	}
+	if(houko=2){
+				moti=0
+				if(muki=0) : gcopy 2,30,36,15,28;migi2
+				if(muki=1) : gcopy 2,28,100,15,28;hidarimannnaka
+
+				
+	}
+	
+	moti+
+	return
+
+*harisibou
+	mmplay 4
+*hari2
+	redraw 2
+	color 0,0,0
+	boxf 0,0,480,321
+	mey+=5
+	pos mex,mey
+	if(muki=0) : gcopy 2,30,36,15,28;migi2
+	if(muki=1) : gcopy 2,28,100,15,28;hidarimannnaka
+	if(mey>322) : goto *gameover
+	redraw 1
+	await 5
+	goto *hari2
+	stop
+
+
+
+*main
+	redraw 2
+	gosub *maphyozi
+	gosub *kyara
+	redraw 1
+	await 5
+	time+
+    gosub *orenozyotai
+	goto *main
+
+stop
+*sutfflorl
+mmplay 9
+cls 4
+pos 100,100
+color 255,255,255
+font "",20
+mes "壊される時の鍵　製作者及び関係者"
+wait 100
+gosub *clean
+color 255,255,255
+pos 30,100
+mes "システム、プログラム、発案、提案、製作、一部音楽"
+wait 50
+pos 200,150
+mes "kamera25"
+wait 100
+gosub *clean
+pos 100,100
+mes "デバック、スペシャルサンクス"
+wait 50
+pos 120,140
+mes "F19"
+pos 180,220
+mes "歩く文房具（はせびゃー）(SOS団）"
+font "",15
+wait 50
+pos 130,170
+mes "http://serpentandf19.web.fc2.com/"
+pos 200,250
+mes "http://hasebya.blog109.fc2.com/"
+pos 350,300
+mes "他多数の皆様"
+wait 100
+gosub *clean
+font "",20
+pos 50,80
+mes "グラフィック(オブジェクト、チップマップ)"
+pos 100,120
+mes "sela"
+wait 100
+pos 50,180
+mes "キャプチャー"
+pos 100,220
+mes "神崎　和水"
+font "",15
+pos 130,250
+mes "http://akatukitiduru.blog105.fc2.com/"
+wait 100
+gosub *clean
+pos 130,100
+font "",20
+mes "グラフィック(キャラクターチップ)"
+pos 110,160
+mes "First Seed Material"
+wait 50
+font "",15
+pos 130,190
+mes "http://www.tekepon.net/fsm"
+wait 80
+pos 50,250
+font "",18
+color 255,0,0
+mes "このソフトは、REFMAPが配布している素材を\n使わせていただいております、このソフトで使用している\n全ての画像の使用を硬く禁止しています"
+wait 150
+gosub *clean
+font "",20
+pos 200,50
+mes "ミュージック"
+pos 230,90
+mes "ピエール・ギロ様"
+font "",15
+pos 250,120
+mes "?"
+font "",20
+wait 50
+pos 50,170
+mes "効果音"
+pos 50,210
+mes "ザ・マッチメイヵァズ"
+font "",15
+pos 80,260
+mes "http://osabisi.sakura.ne.jp/m2/"
+wait 150
+gosub *clean
+font "",20
+pos 110,100
+mes "kamera25's Team For All Player"
+pos 190,140
+gcopy 3,300,525,88,31
+pos 140,200
+wait 80
+mes "Thank you Player!\nLet's try the second play!."
+wait 80
+pos 110,300
+font "",18
+mes "http://consenton.ikaduchi.com/"
+wait 800
+stef=0
+goto *home
+
+
+stop
+*clean
+	color 0,0,0
+	boxf 0,0,480,321
+	color 255,255,255
+	return
+
+
+*gole
+	mmplay 7
+	redraw 2
+	gosub *clean
+	pos mex,mey
+	gcopy 2,27,68,19,28;syomen
+	redraw 1
+	wait 20
+	redraw 2
+	gosub *clean
+	mex+=5
+	pos mex,mey
+	gcopy 2,53,68,19,28;katamukisyomen
+	redraw 2
+	wait 20
+	gosub *clean
+	gcopy 2,27,68,19,28;syomen
+	redraw 1
+	wait 20
+	redraw 2
+	mex-=3
+	pos mex,mey
+	gosub *clean
+	gcopy 2,3,68,19,28;syomenmigi
+	redraw 1
+	wait 20
+	redraw 2
+	gosub *clean
+	pos mex,mey
+	gcopy 2,27,68,19,28;syomen
+	redraw 1
+	wait 20
+	redraw 2
+	gosub *clean
+	mex-=5
+	pos mex,mey
+	gcopy 2,3,68,19,28;syomenmigi
+	redraw 1
+	wait 20
+	redraw 2
+	gosub *clean
+	pos mex,mey
+	gcopy 2,27,68,19,28;syomen
+	redraw 1
+	wait 20
+	redraw 2
+	gosub *clean
+	mex+=5
+	pos mex,mey
+	gcopy 2,53,68,19,28;katamukisyomen
+	redraw 1
+	wait 20
+	moti=0
+repeat
+	redraw 2
+	gosub *clean
+	vx+
+	moti+
+	pos mex,mey
+	if(moti>=11) : moti=0
+    if(moti>=7)and(moti<=10) : gcopy 2,5,36,15,28;migi1
+	if(moti>=4)and(moti<=16) : gcopy 2,30,36,15,28;migi2
+	if(moti>=0)and(moti<=3) : gcopy 2,53,36,15,28;migi3
+	redraw 1
+	mex+=vx
+	wait 3
+	if(mex>=520) : break
+loop
+	vx=0
+	pos 120,100
+    gcopy 3,30,545,255,60
+    wait 70
+    pos 30,200
+    color 255,255,255
+    mes "  ステージ　"+stef+"  Conquest!  次のステージに行きましょう！"
+    wait 30
+    ore=0
+    if(map="0:000000000000000111010010110000100011010101000111010110100100100010010101000111010010110000000000000000e00000000000000b00000000000000c111110111010101"){
+	    	mes "全ステージクリアしました！おめでとうございます！"
+	    	wait 30
+	    	mes "楽しめましたか？また遊びに来てください！"
+	    	wait 200
+	    	goto *sutfflorl
+	    
+	}
+    wait 200
+    stef+
+    goto *start
+	stop
+
+
+*orenozyotai
+		if(mey>322) : goto *gameover
+		if(ore=1) : goto *harisibou
+		if(ore=2) : goto *gole
+		return

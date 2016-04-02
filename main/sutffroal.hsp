@@ -1,0 +1,98 @@
+screen 0,480,321
+cls 4
+pos 100,100
+color 255,255,255
+font "",20
+mes "Wound of iron　製作者及び関係者"
+wait 50
+gosub *clean
+color 255,255,255
+pos 70,100
+mes "システム、プログラム、発案、提案、製作"
+wait 50
+pos 200,150
+mes "kamera25"
+wait 80
+gosub *clean
+pos 100,100
+mes "デバック、スペシャルサンクス"
+wait 50
+pos 120,140
+mes "F19"
+pos 200,220
+mes "歩く文房具（はせびゃー）"
+font "",15
+wait 50
+pos 130,170
+mes "http://serpentandf19.web.fc2.com/"
+pos 210,250
+mes "http://hasebya.blog109.fc2.com/"
+wait 80
+gosub *clean
+font "",20
+pos 50,80
+mes "グラフィック(オブジェクト、チップマップ)"
+pos 100,120
+mes "sela"
+wait 50
+pos 50,180
+mes "キャプチャー"
+pos 100,220
+mes "神崎　和水"
+font "",15
+pos 130,250
+mes "http://akatukitiduru.blog105.fc2.com/"
+wait 100
+gosub *clean
+pos 130,100
+font "",20
+mes "グラフィック(キャラクターチップ)"
+pos 110,160
+mes "First Seed Material"
+wait 30
+font "",15
+pos 130,190
+mes "http://www.tekepon.net/fsm"
+wait 80
+pos 50,250
+font "",18
+color 255,0,0
+mes "このソフトは、REFMAPが配布している素材を\n使わせていただいております、このソフトで使用している\n全ての画像の使用を硬く禁止しています"
+wait 100
+gosub *clean
+font "",20
+pos 200,50
+mes "ミュージック"
+pos 230,90
+mes "煉獄庭園"
+font "",15
+pos 250,120
+mes "http://www.rengoku-teien.com/"
+font "",20
+wait 50
+pos 50,170
+mes "効果音"
+pos 50,210
+mes "ザ・マッチメイヵァズ"
+font "",15
+pos 80,260
+mes "http://osabisi.sakura.ne.jp/m2/"
+wait 100
+gosub *clean
+font "",20
+pos 110,100
+mes "kamera25's Team For All Player"
+pos 150,200
+mes "Thank you Player!\nLet's try the second play!."
+wait 80
+pos 110,300
+font "",18
+mes "http://consenton.ikaduchi.com/"
+
+
+stop
+*clean
+	color 0,0,0
+	boxf 0,0,480,321
+	color 255,255,255
+	return
