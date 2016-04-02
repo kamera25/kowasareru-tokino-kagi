@@ -21,5 +21,9 @@ course：ステージ作成ツール
 スペース：ジャンプ
 右左キー：移動
 
+## ダウンロード
+
+[実行ファイル](https://drive.google.com/file/d/0Bytv_9FcomB_d2ZibjFMUjJGdXM/view?usp=sharing)
+
 ## ライセンス
-すきにして。
+すきにしてください。
